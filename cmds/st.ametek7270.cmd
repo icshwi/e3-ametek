@@ -11,5 +11,5 @@ asynOctetSetInputEos("stream", 0, "\0")
 #asynSetTraceIOMask("stream", -1, 0x2)
  
 #Load your database defining the EPICS records
-dbLoadRecords("ametek7270.template", "P=$(SYS), Q=$(DEV), PROTOCOL=ametekLockIn.proto, PORT=stream")
+dbLoadRecords("ametek7270.db", "P=$(SYS), Q=$(DEV), PROTOCOL=ametekLockIn.proto, PORT=stream")
 
