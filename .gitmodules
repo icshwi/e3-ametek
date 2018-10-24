@@ -1,0 +1,4 @@
+[submodule "ametek"]
+	path = ametek
+	url = https://github.com/icshwi/ametek
+	ignore = all
