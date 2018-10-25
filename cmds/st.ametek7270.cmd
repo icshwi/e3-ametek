@@ -1,4 +1,5 @@
 epicsEnvSet(EPICS_CA_MAX_ARRAY_BYTES,1000000)
+epicsEnvSet(STREAM_PROTOCOL_PATH, "$(ametek_DB)")
 
 #Specify the TCP endpoint and give your 'bus' an arbitrary name eg. "ametek7270stream".
 drvAsynIPPortConfigure("stream", "$(AMETEK_IP):50000")
