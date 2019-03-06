@@ -27,7 +27,7 @@
 ## The following lines are mandatory, please don't change them.
 where_am_I := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 include $(E3_REQUIRE_TOOLS)/driver.makefile
-include $(E3_REQUIRE_CONFIG)/DECOUPLE_FLAGS
+include $(where_am_I)/../configure/DECOUPLE_FLAGS
 
 # If one would like to use the module dependency restrictly,
 # one should look at other modules makefile to add more
@@ -42,7 +42,7 @@ include $(E3_REQUIRE_CONFIG)/DECOUPLE_FLAGS
 #endif
 
 ## Exclude linux-ppc64e6500
-##EXCLUDE_ARCHS = linux-ppc64e6500
+EXCLUDE_ARCHS = linux-ppc64e6500
 
 APP:=ametekApp
 APPDB:=$(APP)/Db
@@ -53,7 +53,8 @@ TEMPLATES += $(wildcard $(APPDB)/*.db)
 TEMPLATES += $(wildcard $(APPPROTO)/*.proto*)
 
 # HEADERS += $(DBDINC_HDRS)
-# SOURCES += $(DBDINC_SRCS)
+SOURCES += $(wildcard $(APPSRC)/*.c)
+DBDS    +=  $(APPSRC)/asub_functions.dbd
 
 # $(DBDINC_DEPS): $(DBDINC_HDRS)
 #
